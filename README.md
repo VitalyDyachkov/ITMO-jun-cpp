@@ -1,2 +1,0 @@
-# ITMO-jun-cpp
-TEST
