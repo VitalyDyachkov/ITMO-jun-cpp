@@ -10,9 +10,11 @@ using namespace std;
 int main()
 {
 	vector <string> VectorSTR;
+	vector <string> VectorSTRboof;
 	string STR;
 	string STR1;
 	string boof;
+	string boof1;
 	int countSTR = 10;
 	int i, j;
 
@@ -20,6 +22,7 @@ int main()
 
 		while (VectorSTR.size() < countSTR + 1){
 		getline(cin, STR, ' ');
+		VectorSTRboof.push_back(STR);
 		transform(STR.begin(), STR.end(), STR.begin(), (int (*)(int)) tolower);
 		VectorSTR.push_back(STR);
 
@@ -33,13 +36,16 @@ int main()
 
 			if(VectorSTR[i].compare(VectorSTR[i + 1]) > 0){
 				boof = VectorSTR[i];
+				boof1 = VectorSTRboof[i];
 				VectorSTR[i] = VectorSTR[i + 1];
+				VectorSTRboof[i] = VectorSTRboof[i+1];
 				VectorSTR[i + 1] = boof;
+				VectorSTRboof[i+1] = boof1;
 			}
 		}
 	}
 
 	for (int i = 1; i < VectorSTR.size(); i++) {
-	    		cout << VectorSTR[i] << " ";
+				cout << VectorSTRboof[i] << " ";
 	    	 }
 }
